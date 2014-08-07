@@ -1,9 +1,13 @@
 Xmlinvoce::Application.routes.draw do
   resources :invoces
 
-  resources :order_types
+  resources :order_types do
+    resources :invoces
+  end
 
-  resources :invoced_companies
+  resources :invoced_companies do
+    resources :invoces
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
