@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140807073250) do
+ActiveRecord::Schema.define(version: 20140807095534) do
 
   create_table "invoced_companies", force: true do |t|
     t.string   "name"
@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 20140807073250) do
   end
 
   create_table "invoces", force: true do |t|
-    t.integer  "id_order_type"
+    t.integer  "invoced_company_id"
+    t.integer  "order_type_id"
     t.string   "shop"
     t.integer  "quantity"
     t.integer  "invoce_number"

@@ -3,8 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Id order type</th>
-      <th>Id order type</th>
+      <th>Invoced company</th>
+      <th>Order type</th>
       <th>Shop</th>
       <th>Quantity</th>
       <th>Invoce number</th>
@@ -18,8 +18,8 @@
   <tbody>
     <% @invoces.each do |invoce| %>
       <tr>
-        <td><%= invoce.id_order_type %></td>
-        <td><%= invoce.id_order_type %></td>
+        <td><%= invoce.invoced_company_id %></td>
+        <td><%= invoce.order_type_id %></td>
         <td><%= invoce.shop %></td>
         <td><%= invoce.quantity %></td>
         <td><%= invoce.invoce_number %></td>

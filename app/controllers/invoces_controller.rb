@@ -69,6 +69,6 @@ class InvocesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def invoce_params
-      params.require(:invoce).permit(:id_order_type, :id_order_type, :shop, :quantity, :invoce_number, :invocedate)
+      params.require(:invoce).permit(:invoced_company_id, :order_type_id, :shop, :quantity, :invoce_number, :invocedate)
     end
 end

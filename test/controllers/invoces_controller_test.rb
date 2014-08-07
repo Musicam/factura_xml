@@ -18,7 +18,7 @@ class InvocesControllerTest < ActionController::TestCase
 
   test "should create invoce" do
     assert_difference('Invoce.count') do
-      post :create, invoce: { id_order_type: @invoce.id_order_type, id_order_type: @invoce.id_order_type, invoce_number: @invoce.invoce_number, invocedate: @invoce.invocedate, quantity: @invoce.quantity, shop: @invoce.shop }
+      post :create, invoce: { invoce_number: @invoce.invoce_number, invoced_company_id: @invoce.invoced_company_id, invocedate: @invoce.invocedate, order_type_id: @invoce.order_type_id, quantity: @invoce.quantity, shop: @invoce.shop }
     end
 
     assert_redirected_to invoce_path(assigns(:invoce))
@@ -35,7 +35,7 @@ class InvocesControllerTest < ActionController::TestCase
   end
 
   test "should update invoce" do
-    patch :update, id: @invoce, invoce: { id_order_type: @invoce.id_order_type, id_order_type: @invoce.id_order_type, invoce_number: @invoce.invoce_number, invocedate: @invoce.invocedate, quantity: @invoce.quantity, shop: @invoce.shop }
+    patch :update, id: @invoce, invoce: { invoce_number: @invoce.invoce_number, invoced_company_id: @invoce.invoced_company_id, invocedate: @invoce.invocedate, order_type_id: @invoce.order_type_id, quantity: @invoce.quantity, shop: @invoce.shop }
     assert_redirected_to invoce_path(assigns(:invoce))
   end
 
