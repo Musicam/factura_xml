@@ -1,9 +1,35 @@
-<p id="notice"><%= notice %></p>
+<% if(notice) %>
+    <div class="alert alert-success" role="alert"><%= notice %></div>
+<% end %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= t(:invoiced_company) %></h3>
+  </div>
+  <div class="panel-body">
+    <strong><%= t(:name) %>:</strong>
+    <%= @invoced_company.name %>
+  </div>
+  <div class="panel-body">
+    <strong><%= t(:city_cp) %>:</strong>
+    <%= @invoced_company.city_cp %>
+  </div>
+  <div class="panel-body">
+    <strong><%= t(:country).capitalize %>:</strong>
+    <%= @invoced_company.country %>
+  </div>
+  <div class="panel-body">
+    <strong><%= t(:phone) %>:</strong>
+    <%= @invoced_company.phone %>
+  </div>
+  <div class="panel-body">
+    <strong><%= t(:cif) %>:</strong>
+    <%= @invoced_company.cif %>
+  </div>
+  <div class="panel-body">
+    <strong><%= t(:address).capitalize %></strong>
+    <%= @invoced_company.address %>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @invoced_company.name %>
-</p>
-
-<%= link_to 'Edit', edit_invoced_company_path(@invoced_company) %> |
-<%= link_to 'Back', invoced_companies_path %>
+<%= link_to t(:Edit), edit_invoced_company_path(@invoced_company) %> |
+<%= link_to t(:Back), invoced_companies_path %>

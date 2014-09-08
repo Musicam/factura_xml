@@ -1,9 +1,12 @@
-<h1>Listing order_types</h1>
+<% if(alert) %>
+    <div class="alert alert-danger"role="alert"><%= alert %></div>
+<% end %>
+<h1><%= t(:listing_order_types) %></h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Name</th>
+      <th><%= t(:name) %></th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,9 +17,9 @@
     <% @order_types.each do |order_type| %>
       <tr>
         <td><%= order_type.name %></td>
-        <td><%= link_to 'Show', order_type %></td>
-        <td><%= link_to 'Edit', edit_order_type_path(order_type) %></td>
-        <td><%= link_to 'Destroy', order_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t(:Show), order_type %></td>
+        <td><%= link_to t(:Edit), edit_order_type_path(order_type) %></td>
+        <td><%= link_to t(:Destroy), order_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Order type', new_order_type_path %>
+<%= link_to t(:new_order_type), new_order_type_path %>

@@ -1,9 +1,14 @@
-<h1>Listing invoced_companies</h1>
+<% if(alert) %>
+<div class="alert alert-danger"role="alert"><%= alert %></div>
+<% end %>
+<h1><%= t(:listing_invoices_companies) %></h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Name</th>
+      <th><%= t(:name) %></th>
+      <th><%= t(:address).capitalize %></th>
+      <th><%= t(:country).capitalize %></th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,9 +19,11 @@
     <% @invoced_companies.each do |invoced_company| %>
       <tr>
         <td><%= invoced_company.name %></td>
-        <td><%= link_to 'Show', invoced_company %></td>
-        <td><%= link_to 'Edit', edit_invoced_company_path(invoced_company) %></td>
-        <td><%= link_to 'Destroy', invoced_company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= invoced_company.address %></td>
+        <td><%= invoced_company.country %></td>
+        <td><%= link_to t(:Show), invoced_company %></td>
+        <td><%= link_to t(:Edit), edit_invoced_company_path(invoced_company) %></td>
+        <td><%= link_to t(:Destroy), invoced_company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Invoced company', new_invoced_company_path %>
+<%= link_to t(:new_invoiced_company), new_invoced_company_path %>

@@ -11,12 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140807095534) do
+ActiveRecord::Schema.define(version: 20140902084352) do
 
   create_table "invoced_companies", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "address"
+    t.string   "city_cp"
+    t.string   "country"
+    t.string   "phone"
+    t.string   "cif"
   end
 
   create_table "invoces", force: true do |t|
@@ -24,10 +29,11 @@ ActiveRecord::Schema.define(version: 20140807095534) do
     t.integer  "order_type_id"
     t.string   "shop"
     t.integer  "quantity"
-    t.integer  "invoce_number"
     t.date     "invocedate"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "address"
+    t.string   "city"
   end
 
   create_table "order_types", force: true do |t|

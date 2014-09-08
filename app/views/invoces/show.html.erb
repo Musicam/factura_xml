@@ -1,34 +1,36 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Invoced company:</strong>
-  <%= @invoce.invoced_company_id %>
-</p>
-
-<p>
-  <strong>Order type:</strong>
-  <%= @invoce.order_type_id %>
-</p>
-
-<p>
-  <strong>Shop:</strong>
-  <%= @invoce.shop %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @invoce.quantity %>
-</p>
-
-<p>
-  <strong>Invoce number:</strong>
-  <%= @invoce.invoce_number %>
-</p>
-
-<p>
-  <strong>Invocedate:</strong>
-  <%= @invoce.invocedate %>
-</p>
-
-<%= link_to 'Edit', edit_invoce_path(@invoce) %> |
-<%= link_to 'Back', invoces_path %>
+<% if(notice) %>
+    <div class="alert alert-success" role="alert"><%= notice %></div>
+<% end %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= t(:shop) %>: <%= @invoce.shop %></h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong><%= t(:invoiced_company) %>:</strong>
+      <%= @invoce.invoced_company.name %>
+    </p>
+    <p>
+      <strong><%= t(:order_type) %>:</strong>
+      <%= @invoce.order_type_id %>
+    </p>
+    <p>
+      <strong><%= t(:quantity) %>:</strong>
+      <%= @invoce.quantity %>
+    </p>
+    <p>
+      <strong><%= t(:address).capitalize %>:</strong>
+      <%= @invoce.address %>
+    </p>
+    <p>
+      <strong><%= t(:city) %>:</strong>
+      <%= @invoce.city %>
+    </p>
+    <p>
+      <strong><%= t(:invoice_date) %>:</strong>
+      <%= @invoce.invocedate %>
+    </p>
+<%= link_to t(:Edit), edit_invoce_path(@invoce) %> |
+<%= link_to t(:Back), invoces_path %>
+  </div>
+</div>

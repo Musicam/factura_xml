@@ -1,14 +1,15 @@
-<h1>Listing invoces</h1>
+<h1><%= t(:listing_invoices) %></h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Invoced company</th>
-      <th>Order type</th>
-      <th>Shop</th>
-      <th>Quantity</th>
-      <th>Invoce number</th>
-      <th>Invocedate</th>
+      <th><%= t(:invoiced_company) %></th>
+      <th><%= t(:order_type) %></th>
+      <th><%= t(:shop) %></th>
+      <th><%= t(:quantity) %></th>
+      <th><%= t(:invoice_date) %></th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,15 +19,16 @@
   <tbody>
     <% @invoces.each do |invoce| %>
       <tr>
-        <td><%= invoce.invoced_company_id %></td>
-        <td><%= invoce.order_type_id %></td>
+        <td><%= invoce.invoced_company.name %></td>
+        <td><%= invoce.order_type.name %></td>
         <td><%= invoce.shop %></td>
         <td><%= invoce.quantity %></td>
-        <td><%= invoce.invoce_number %></td>
         <td><%= invoce.invocedate %></td>
-        <td><%= link_to 'Show', invoce %></td>
-        <td><%= link_to 'Edit', edit_invoce_path(invoce) %></td>
-        <td><%= link_to 'Destroy', invoce, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "XML", "/xml/#{invoce.get_xml_file_name}" if invoce.exists_xml %> </td>
+        <td><%= link_to "Packing", "/pdf/packing/#{invoce.get_pdf_packing_file_name} " if invoce.exists_pdf_packing %></td>
+        <td><%= link_to "Proforma", "/pdf/proforma/#{invoce.get_pdf_proforma_file_name}" if invoce.exists_pdf_proforma %></td>
+        <td><%= link_to t(:Edit), edit_invoce_path(invoce) %></td>
+        <td><%= link_to t(:Destroy), invoce, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Invoce', new_invoce_path %>
+<%= link_to t(:new_invoice), new_invoce_path %>

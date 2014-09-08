@@ -28,7 +28,7 @@ class InvocedCompaniesController < ApplicationController
 
     respond_to do |format|
       if @invoced_company.save
-        format.html { redirect_to @invoced_company, notice: 'Invoced company was successfully created.' }
+        format.html { redirect_to @invoced_company, notice: t(:successfully_updated_invoced_company) }
         format.json { render action: 'show', status: :created, location: @invoced_company }
       else
         format.html { render action: 'new' }
@@ -41,8 +41,9 @@ class InvocedCompaniesController < ApplicationController
   # PATCH/PUT /invoced_companies/1.json
   def update
     respond_to do |format|
+
       if @invoced_company.update(invoced_company_params)
-        format.html { redirect_to @invoced_company, notice: 'Invoced company was successfully updated.' }
+        format.html { redirect_to @invoced_company, notice: t(:successfully_updated_invoced_company) }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -54,11 +55,16 @@ class InvocedCompaniesController < ApplicationController
   # DELETE /invoced_companies/1
   # DELETE /invoced_companies/1.json
   def destroy
-    @invoced_company.destroy
+
     respond_to do |format|
-      format.html { redirect_to invoced_companies_url }
-      format.json { head :no_content }
-    end
+      if @invoced_company.destroy
+        format.html { redirect_to invoced_companies_url}
+        format.json { head :no_content }
+      else
+        format.html { redirect_to invoced_companies_url, :alert => t(:error_destroy_invoiced_company) }
+        format.json { head :no_content }
+      end
+      end
   end
 
   private
@@ -69,6 +75,8 @@ class InvocedCompaniesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def invoced_company_params
-      params.require(:invoced_company).permit(:name)
+
+      params.require(:invoced_company).permit(:name, :address, :city_cp, :country, :phone, :cif)
+
     end
 end

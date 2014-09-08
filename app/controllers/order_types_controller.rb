@@ -28,7 +28,7 @@ class OrderTypesController < ApplicationController
 
     respond_to do |format|
       if @order_type.save
-        format.html { redirect_to @order_type, notice: 'Order type was successfully created.' }
+        format.html { redirect_to @order_type, notice: t(:successfully_updated_order_type) }
         format.json { render action: 'show', status: :created, location: @order_type }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class OrderTypesController < ApplicationController
   def update
     respond_to do |format|
       if @order_type.update(order_type_params)
-        format.html { redirect_to @order_type, notice: 'Order type was successfully updated.' }
+        format.html { redirect_to @order_type, notice: t(:successfully_updated_order_type) }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -54,11 +54,18 @@ class OrderTypesController < ApplicationController
   # DELETE /order_types/1
   # DELETE /order_types/1.json
   def destroy
+
     @order_type.destroy
     respond_to do |format|
-      format.html { redirect_to order_types_url }
-      format.json { head :no_content }
+      if @order_type.destroy
+        format.html { redirect_to order_types_url}
+        format.json { head :no_content }
+      else
+        format.html { redirect_to order_types_url,:alert => t(:error_destroy_order_type) }
+        format.json { head :no_content }
+      end
     end
+
   end
 
   private

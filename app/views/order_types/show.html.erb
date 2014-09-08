@@ -1,9 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @order_type.name %>
-</p>
-
-<%= link_to 'Edit', edit_order_type_path(@order_type) %> |
-<%= link_to 'Back', order_types_path %>
+<% if(notice) %>
+    <div class="alert alert-success" role="alert"><%= notice %></div>
+<% end %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= t(:order_type) %></h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong><%= t(:name) %>:</strong>
+      <%= @order_type.name %>
+    </p>
+  </div>
+</div>
+<%= link_to t(:Edit), edit_order_type_path(@order_type) %> |
+<%= link_to t(:Back), order_types_path %>
