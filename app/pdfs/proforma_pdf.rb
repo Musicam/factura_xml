@@ -39,8 +39,7 @@ class ProformaPdf < Prawn::Document
       move_down 20
       country = "Madrid"
       
-
-      t = make_table([["Madrid 4 de Septiembre 2014"," ", " ","Fra PROFORMA #{@invoce.invocedate.strftime("%d%m%Y")}/#{@invoce.shop}"]], :cell_style => {:size => 8,:padding => [0, 0, 0, 35],:border_color => "FFFFCC"},:width => 400)
+      t = make_table([["#{country} #{Date.today.strftime("%d de %B de %Y")}"," ", " ","Fra PROFORMA #{@invoce.invocedate.strftime("%d%m%Y")}/#{@invoce.shop}"]], :cell_style => {:size => 8,:padding => [0, 0, 0, 35],:border_color => "FFFFCC"},:width => 400)
       t.draw
       move_down 20
       t2 = make_table([["Cantidad","Descripcion", "P.Unitario","TOTAL"],["1","Importe correspondiente a la venta del
