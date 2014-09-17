@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice>
+  <header>
+    <SupplierMerkenID type="integer">10078</SupplierMerkenID>
+    <SupplierName>RADIO AMBIENTE MUSICAL S.A.</SupplierName>
+    <SupplierAddress>MARIE CURIE, 5-7 EDIF. BETA 2, 2-1 - 28521 RIVAS VACIAMADRID-MADRID-SPAIN</SupplierAddress>
+    <SupplierNIF>A-08204638</SupplierNIF>
+    <InvoiceNumber>MAD-16092014/2321</InvoiceNumber>
+    <InvoiceDate>16/09/2014</InvoiceDate>
+    <InvoicedCompany>ITX Merken B.V. FB</InvoicedCompany>
+    <BaseAmount></BaseAmount>
+    <RecyclingAmount></RecyclingAmount>
+    <VATPercentage></VATPercentage>
+    <VATAmount></VATAmount>
+    <DiscountPercentage></DiscountPercentage>
+    <DiscountAmount></DiscountAmount>
+    <TotalAmount></TotalAmount>
+    <Currency>EURO</Currency>
+    <Bundles>1</Bundles>
+    <NetWeight>3,75</NetWeight>
+    <GrossWeight>4</GrossWeight>
+    <Comments>-</Comments>
+    <InvoiceType>PROFORMA</InvoiceType>
+  </header>
+  <LogisticInfo>
+    <Incoterm></Incoterm>
+    <FleteAmount></FleteAmount>
+    <DestinationPort></DestinationPort>
+  </LogisticInfo>
+  <DepartmentInfo>
+    <OriginCompany></OriginCompany>
+    <OriginDepartment></OriginDepartment>
+    <PersonContact></PersonContact>
+  </DepartmentInfo>
+  <lines>
+    <line>
+      <DestinationShopID>2321</DestinationShopID>
+      <ItemCode></ItemCode>
+      <SpanishDescription>Equipo DVD reproductor digital de musica</SpanishDescription>
+      <EnglishDescription>DVD player</EnglishDescription>
+      <Price>5</Price>
+      <LineAmount></LineAmount>
+      <LineVATAmount></LineVATAmount>
+      <UnitVATPercentage></UnitVATPercentage>
+      <UnitMeasure>cm</UnitMeasure>
+      <RealMeasure>27,5x29,5x6,5</RealMeasure>
+      <Quantity>1</Quantity>
+      <FisterraCode></FisterraCode>
+      <HCode>8521901000</HCode>
+      <OriginCountry>CHINA</OriginCountry>
+      <Manufacturer>30 RUE DE LA STATION, 94440 VILLECRESNES, FRANCE</Manufacturer>
+      <FurnitureService>FURNITURE</FurnitureService>
+      <OrderType>Opening</OrderType>
+      <ProjectCode></ProjectCode>
+      <volume></volume>
+      <Comments>-</Comments>
+      <NetWeight>3,750</NetWeight>
+    </line>
+  </lines>
+</invoice>
